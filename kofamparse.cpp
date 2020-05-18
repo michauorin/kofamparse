@@ -2,6 +2,7 @@
 #include<iostream>
 #include<sstream>
 #include<string>
+#include<algorithm>
 
 using namespace std;
 
@@ -31,13 +32,13 @@ struct kofam_hit
 
 int main(int argc, char* argv[])
 {
-	if (argc < 3)
-	{
-	cerr << "USAGE: kofamparse [SOURCE_FILE] [RESULT_FILE]";
-  return -1;
-	}
+        if (argc < 3)
+        {
+        cerr << "USAGE: kofamparse [SOURCE_FILE] [RESULT_FILE]";
+        return -1;
+        }
 
-	ifstream input_file;
+  ifstream input_file;
   input_file.open(argv[1]);
   if(!input_file.is_open()) cerr << "Input file could not be opened!";
 
@@ -77,7 +78,6 @@ int main(int argc, char* argv[])
               << "score, e-value, KO definition\n";
   output_file << output_buffer.str();
   output_file.close();
-
 
 return 0;
 }
